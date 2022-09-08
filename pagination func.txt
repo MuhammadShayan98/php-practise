@@ -1,0 +1,49 @@
+
+    function showPagination()
+    {
+        $search = $this->input->post('Student_Name');
+        // $result['data'] = $this->Student_Model->filter_data($Student_Name);
+        // $this->load->view('Admin/students/index', $result);
+
+        $config = array();
+        $config["base_url"] = base_url() . "Admin/Manage_User/showPagination" . $search;
+        $config["total_rows"] = $this->Student_Model->get_count();
+        $config["per_page"] = 2;
+        $config["uri_segment"] = 4;
+        
+        $config['full_tag_open']     =     "<ul class='pagination pagination-split'>";
+        $config['full_tag_close']     =    "</ul>";
+        $config['num_tag_open']     =     '<li>';
+        $config['num_tag_close']     =     '</li>';
+        $config['cur_tag_open']     =     "<li class='disabled'><li class='active'><a href='#'>";
+        $config['cur_tag_close']     =     "<span class='sr-only'></span></a></li>";
+        $config['next_tag_open']     =     "<li>";
+        $config['next_tag_close']     =     "</li>";
+        $config['prev_tag_open']     =     "<li>";
+        $config['prev_tag_close']     =     "</li>";
+        $config['first_tag_open']     =     "<li>";
+        $config['first_tag_close'] =     "</li>";
+        $config['last_tag_open']     =     "<li>";
+        $config['last_tag_close']     =     "</li>";
+
+        $config['prev_link'] = '<i class="fa fa-long-arrow-left"></i>Previous Page';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['next_link'] = 'Next Page<i class="fa fa-long-arrow-right"></i>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data["links"] = $this->pagination->create_links();
+        $data['students'] = $search;
+        $data['data'] = $this->Student_Model->get_students($config["per_page"], $page,$search);
+        $this->load->view('Admin/students/index', $data);
+    }
+
+
+   <!-- <?php echo $this->pagination->create_links(); ?> -->
+
+
+
