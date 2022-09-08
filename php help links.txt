@@ -1,0 +1,9 @@
+https://www.tutsmake.com/php-code-insert-data-into-mysql-database-from-form/
+https://www.c-sharpcorner.com/UploadFile/9582c9/script-for-login-logout-and-view-using-php-mysql-and-boots/
+https://www.studentstutorial.com/php/php-mysql-data-update
+https://www.geeksforgeeks.org/creating-an-activate-deactivate-button-using-php-and-mysql/
+https://www.phptpoint.com/Codeigniter-upload-file-image/
+https://teknowize.com/articles/web-articles/laravel-crud-operation-using-resource-controller
+https://www.codecheef.org/article/tag/laravel
+https://stackoverflow.com/questions/47186297/uncaught-referenceerror-xlsx-is-not-defined-on-drop-file
+https://stackoverflow.com/questions/22317951/export-html-table-data-to-excel-using-javascript-jquery-is-not-working-properl
